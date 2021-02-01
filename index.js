@@ -62,9 +62,10 @@ const getSignedUrl = async (bucket, file) => {
   // The line below return error " getSignedUrl The action is not provided or invalid"
   const singedUrl = await bucket.file(file.name).getSignedUrl()
 
-  // If want get singed url must use through getMetadata() method
+  /* If want get singed url must use through getMetadata() method
   // const mediaData = await bucket.file(file.name).getMetadata()
   // const singedUrl = mediaData[1].request.href
+  */
   console.log(singedUrl)
   return singedUrl
 }
@@ -82,7 +83,21 @@ const configACL = async (bucket, file) => {
   await bucket.file(file.name).save(file.data, { resumable: false })
   const acl = await bucket.file(file.name).acl
   await acl.owners.addAllUsers()
-  // owners, readers, writers: addUser(), addGroup(), addAllAuthenticatedUsers() , deleteAllAuthenticatedUsers(), addAllUsers(), deleteAllUsers(), addDomain(), deleteDomain(), deleteGroup(), addProject(), deleteProject(), deleteUser()
+  /*
+  owners, readers, writers:
+  - addUser()
+  - addGroup()
+  - addDomain()
+  - addProject()
+  - deleteUser()
+  - deleteGroup()
+  - addAllUsers()
+  - deleteDomain()
+  - deleteProject()
+  - deleteAllUsers()
+  - addAllAuthenticatedUsers()
+  - deleteAllAuthenticatedUsers()
+  */
 }
 
 fakeGCSServer().catch((err) => {
