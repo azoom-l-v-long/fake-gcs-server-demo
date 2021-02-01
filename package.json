@@ -1,0 +1,16 @@
+{
+  "name": "fake-gcs-server",
+  "version": "1.0.0",
+  "description": "fake google cloud storage server",
+  "main": "index.js",
+  "author": "le-van-long",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^5.7.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0"
+  }
+}

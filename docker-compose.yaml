@@ -1,0 +1,9 @@
+version: "3"
+services:
+  fake-gcs-server:
+    image: fsouza/fake-gcs-server:1.21
+    volumes:
+      - ../../.storage:/data
+    ports:
+      - 4443:4443
+    command: -scheme http
