@@ -1,6 +1,6 @@
 {
   "name": "fake-gcs-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "fake google cloud storage server",
   "main": "index.js",
   "author": "le-van-long",
